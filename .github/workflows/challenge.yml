@@ -2,9 +2,14 @@ name: artefact_challenge
 
 on: push
 
+#setup global env variables 
+env:
+  first_name: Adam
+  last_name: Kowalski
+
 jobs:
   create_artefact:
     runs-on: ubuntu-latest
     steps:
       - name: First Step
-        run: echo "Hello World"
+        run: echo "Hello ${{ env.first_name }}" 
