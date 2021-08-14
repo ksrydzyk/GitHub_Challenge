@@ -17,7 +17,7 @@ jobs:
       - name: Checkout action
         uses: actions/checkout@v2
       - name: Artifact create and upload
-        uses: actions/artifact-upload@v2
+        uses: actions/upload-artifact@v2
         with:
           name: my-artifact
           path: "data/${{ env.artifact_name }}.txt" 
