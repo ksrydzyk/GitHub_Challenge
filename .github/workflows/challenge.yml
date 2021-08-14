@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Step
-        run: echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ artifact_name}}.txt" 
+        run: echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ artifact_name }}.txt" 
       - name: Checkout action
         uses: actions/checkout@v2
       - name: Artifact create and upload
         uses: actions/artifact-upload@v2
         with:
           name: my-artifact
-          path: "data/${{ artifact_name}}.txt" 
+          path: "data/${{ artifact_name }}.txt" 
             
