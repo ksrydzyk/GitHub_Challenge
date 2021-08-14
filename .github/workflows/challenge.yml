@@ -13,7 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Step
-        run: echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ env.artifact_name }}.txt" 
+        run: |
+          mkdir data
+          echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ env.artifact_name }}.txt" 
       - name: Checkout action
         uses: actions/checkout@v2
       - name: Artifact create and upload
