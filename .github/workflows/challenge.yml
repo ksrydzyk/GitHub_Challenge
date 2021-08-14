@@ -1,0 +1,10 @@
+name: artefact_challenge
+
+on: push
+
+jobs:
+  create_artefact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step
+        run: echo "Hello World"
