@@ -12,12 +12,12 @@ jobs:
   create_artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: First Step
-        run: |
-          mkdir data
-          echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ env.artifact_name }}.txt" 
-      - name: Checkout action
+      - name: checkout action
         uses: actions/checkout@v2
+      - name: make directory
+        run: mkdir data
+      - name: create a file
+        run: echo "Hello ${{ env.first_name }} ${{ env.last_name }}" > "data/${{ env.artifact_name }}.txt" 
       - name: Artifact create and upload
         uses: actions/upload-artifact@v2
         with:
